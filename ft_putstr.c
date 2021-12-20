@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calc_width_unsign_zero.c                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 20:42:16 by hmoubal           #+#    #+#             */
-/*   Updated: 2021/11/28 03:19:18 by hmoubal          ###   ########.fr       */
+/*   Created: 2021/12/02 16:59:26 by hmoubal           #+#    #+#             */
+/*   Updated: 2021/12/02 16:59:29 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void ft_calc_width_unsign_zero(unsigned int a, int r,int *count)
+void	ft_putstr(char *str, int *count)
 {
-	int k;
+	int	i;
 
-	k = ft_size_hex(a);
-	if(k >= r)
-		k = 0;
-	else
-		k = r - k;
-	ft_print_zero(k,count);
+	i = 0;
+	if (!str)
+	{
+		*count += write(1, "(null)", 6);
+		return ;
+	}
+	while (str[i])
+	{
+		*count += write(1, &str[i], 1);
+		i++;
+	}
+	return ;
 }

@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_space_presi.c                             :+:      :+:    :+:   */
+/*   ft_detect_bonus4_all.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/28 18:49:46 by hmoubal           #+#    #+#             */
-/*   Updated: 2021/11/28 18:54:38 by hmoubal          ###   ########.fr       */
+/*   Created: 2021/12/02 16:38:53 by hmoubal           #+#    #+#             */
+/*   Updated: 2021/12/20 00:43:37 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_space_presi(int *max_width,int *count,long int a)
+void	ft_detect_bonus4_all(va_list hub, char **str, int *count)
 {
-	int k;
-
-	k = ft_size_int(a);
-	if(k > max_width[1])
-		ft_print_space(max_width[0] - k,count);
-	else
-		ft_print_space(max_width[0] - max_width[1],count);
-
+	if (*(*str) == ' ')
+		ft_space_flags(hub, str, count);
+	else if (*(*str) == '+')
+		ft_plus_flags(hub, str, count);
+	else if (*(*str) == '#')
+		ft_sharp_flags(hub, str, count);
 }
