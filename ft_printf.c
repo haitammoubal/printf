@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 15:27:28 by hmoubal           #+#    #+#             */
-/*   Updated: 2021/12/06 19:08:57 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/03/18 00:40:54 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,8 @@ void	ft_sep(va_list hub, char **str, int *count)
 int	ft_printf(const char *str, ...)
 {
 	va_list	hub;
-	int		i;
 	int		count;
 
-	i = 0;
 	count = 0;
 	va_start(hub, str);
 	while (*str)

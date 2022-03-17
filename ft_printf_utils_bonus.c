@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:21:48 by hmoubal           #+#    #+#             */
-/*   Updated: 2021/12/20 01:09:38 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/03/18 00:41:32 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,6 @@ void	ft_detect3_bonus(va_list hub, char *str, int *count)
 
 void	cal_bonus(unsigned long n, unsigned long nb, char *base, int *count)
 {
-	if (nb < 0)
-	{
-		*count += write(1, "-", 1);
-		nb = -1 * nb;
-	}
 	if (nb >= n)
 		cal_bonus(n, nb / n, base, count);
 	*count += write(1, base + (nb % n), 1);
